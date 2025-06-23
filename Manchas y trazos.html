@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Manchas y trazos
+</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f0f2f5;
+      color: #333;
+    }
+
+    header {
+      background-color: #007BFF;
+      padding: 20px;
+      text-align: center;
+      color: white;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2em;
+    }
+
+    .contenido {
+      max-width: 1100px;
+      margin: 40px auto;
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+      padding: 40px;
+      display: flex;
+      flex-direction: row;
+      gap: 30px;
+      align-items: flex-start;
+    }
+
+    .contenido img {
+      width: 350px;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      object-fit: cover;
+    }
+
+    .descripcion {
+      flex: 1;
+    }
+
+    .descripcion h2 {
+      color: #007BFF;
+      font-size: 1.8em;
+      margin-top: 0;
+    }
+
+    .descripcion ul {
+      margin-top: 10px;
+      padding-left: 20px;
+    }
+
+    .botones {
+      margin-top: 30px;
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .botones a,
+    .botones button {
+      padding: 10px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .volver {
+      background-color: #6c757d;
+      color: white;
+    }
+
+    .volver:hover {
+      background-color: #5a6268;
+    }
+
+    .agregar {
+      background-color: #28a745;
+      color: white;
+      border: none;
+    }
+
+    .agregar:hover {
+      background-color: #218838;
+    }
+
+    .descargar {
+      background-color: #007BFF;
+      color: white;
+      border: none;
+    }
+
+    .descargar:hover {
+      background-color: #0056b3;
+    }
+
+    footer {
+      margin-top: 60px;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
+      color: #777;
+    }
+
+    @media (max-width: 768px) {
+      .contenido {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .contenido img {
+        width: 100%;
+        max-width: 400px;
+      }
+
+      .descripcion {
+        text-align: left;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Biblioteca Digital</h1>
+  </header>
+
+  <div class="contenido">
+    <img src="https://editorialgg.com.mx/media/catalog/product/cache/3/image/9df78eab33525d08d6e5fb8d27136e95/9/7/97884252322006_cub.jpg" alt="Manchas y trazos" />
+    
+    <div class="descripcion">
+      <h2>Manchas y trazos</h2>
+      <p>
+ La historia y la academia las ha separado, pero dibujar y pintar son dos técnicas tan imbricadas que, cuando se fusionan, producen obras explosivas. Felix Scheinberger lo sabe bien y con este libro se ha propuesto mostrárnoslo de forma práctica y directa. A través de 70 breves cápsulas teóricas y visuales, el popular ilustrador alemán nos cuenta las claves de la fusión de las manchas de color y los trazos, su potencial expresivo conjunto, la historia de su segmentación y un sinfín de trucos, consejos y conocimientos que se convertirán en imprescindibles para llevar a cabo tus creaciones plásticas. <p>
+En defnitiva, una invitación entusiasta a despojarnos de nuestros prejuicios academicistas y a lanzarnos a crear sin la tiranía de la tradición.      
+      <div class="botones">
+        <button class="agregar" id="btnAgregar">Agregar al carrito</button>
+        <a href="index.html" class="volver">← Volver a la biblioteca</a>
+        <a href="https://dokumen.pub/manchas-y-trazos-el-arte-de-fusionar-pintura-y-dibujo-8425229618-9788425229619.html" class="descargar" download target="_blank" rel="noopener noreferrer">📥 Descargar libro</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const btnAgregar = document.getElementById('btnAgregar');
+
+    const libro = {
+      id: 'Manchas y trazos',
+      titulo: 'Manchas y trazos',
+      imagen: 'https://editorialgg.com.mx/media/catalog/product/cache/3/image/9df78eab33525d08d6e5fb8d27136e95/9/7/97884252322006_cub.jpg'
+    };
+
+    btnAgregar.addEventListener('click', () => {
+      let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+      const existe = carrito.some(item => item.id === libro.id);
+
+      if (!existe) {
+        carrito.push(libro);
+        localStorage.setItem('carrito', JSON.stringify(carrito));
+        btnAgregar.textContent = 'Agregado ✅';
+        btnAgregar.disabled = true;
+      }
+    });
+
+    window.addEventListener('DOMContentLoaded', () => {
+      let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+      const existe = carrito.some(item => item.id === libro.id);
+
+      if (existe) {
+        btnAgregar.textContent = 'Agregado ✅';
+        btnAgregar.disabled = true;
+      }
+    });
+  </script>
+
+</body>
+</html>
+ 

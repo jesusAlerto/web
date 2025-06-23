@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cuentos</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f6f8;
+      color: #333;
+    }
+
+    header {
+      background-color: #007BFF;
+      color: rgb(255, 255, 255);
+      padding: 20px 40px;
+      text-align: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2em;
+    }
+
+    .contenedor {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .libros-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 25px;
+    }
+
+    .libro {
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      padding: 15px;
+      text-align: center;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .libro:hover {
+      transform: scale(1.03);
+      box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+    }
+
+    .libro img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .libro p {
+      margin-top: 10px;
+      font-weight: bold;
+      color: #555;
+    }
+    .nav-links {
+  margin-top: 10px;
+}
+
+.nav-links a {
+  margin: 0 15px;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+
+    footer {
+      margin-top: 50px;
+      padding: 20px;
+      text-align: center;
+      background-color: #eaeaea;
+      font-size: 0.9em;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <!-- Barra de navegación -->
+  <header class="navbar">
+    <h1>Cuentos</h1>
+    <p>Explora nuestros cuentos</p>
+    <nav class="nav-links">
+      <a href="index.html">Inicio</a>
+      <a href="terror.html">terror</a>
+      <a href="romance.html">romance</a>
+      <a href="comedia.html">comedia</a>
+      <a href="programacion.html">proghramacion</a>
+      <a href="administracion.html">administracion</a>
+      <a href="soporte.html">soporte</a>
+
+    </nav>
+  </header>
+
+  <div class="contenedor">
+    <div class="libros-grid">
+
+        <a href="Blanca Nieves y los siete enanitos.html" class="libro">
+            <img src="https://dse097yy69ach.cloudfront.net/files/3577ca0cffdd47ebade5e35a577fd0e3.webp" alt="Blanca Nieves y los siete enanitos">
+            <p>Blanca Nieves y los siete enanitos</p>
+          </a>
+          
+          <a href="Aladdín y la lámpara mágica.html" class="libro">
+            <img src="https://dse097yy69ach.cloudfront.net/files/02cc0598db544fecaedba6c58a6e8579.webp" alt="Aladdín y la lámpara mágica">
+            <p>Aladdín y la lámpara mágica</p>
+          </a>
+
+          <a href="Pinocho.html " class="libro">
+            <img src="https://dse097yy69ach.cloudfront.net/files/06d8243281634923a2d16312103b4f9e.webp" alt="Pinocho">
+            <p>Pinocho</p>
+          </a>
+          
+        <a href="La bella durmiente.html" class="libro">
+            <img src="https://dse097yy69ach.cloudfront.net/files/c4605f209b30400a9b9bebb6290a8201.webp" alt="La bella durmiente">
+            <p>La bella durmiente</p>
+          </a>
+
+             
+    </div>
+  </div>
+</body>
+</html>

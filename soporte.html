@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Soporte y mantenimiento del equipo de cómputo</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f0f2f5;
+      color: #333;
+    }
+
+    header {
+      background-color: #007BFF;
+      padding: 20px;
+      text-align: center;
+      color: white;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2em;
+    }
+
+    .contenido {
+      max-width: 1100px;
+      margin: 40px auto;
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+      padding: 40px;
+      display: flex;
+      flex-direction: row;
+      gap: 30px;
+      align-items: flex-start;
+    }
+
+    .contenido img {
+      width: 350px;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      object-fit: cover;
+    }
+
+    .descripcion {
+      flex: 1;
+    }
+
+    .descripcion h2 {
+      color: #007BFF;
+      font-size: 1.8em;
+      margin-top: 0;
+    }
+
+    .descripcion ul {
+      margin-top: 10px;
+      padding-left: 20px;
+    }
+
+    .botones {
+      margin-top: 30px;
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .botones a,
+    .botones button {
+      padding: 10px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .volver {
+      background-color: #6c757d;
+      color: white;
+    }
+
+    .volver:hover {
+      background-color: #5a6268;
+    }
+
+    .agregar {
+      background-color: #28a745;
+      color: white;
+      border: none;
+    }
+
+    .agregar:hover {
+      background-color: #218838;
+    }
+
+    .descargar {
+      background-color: #007BFF;
+      color: white;
+      border: none;
+    }
+
+    .descargar:hover {
+      background-color: #0056b3;
+    }
+
+    footer {
+      margin-top: 60px;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
+      color: #777;
+    }
+
+    @media (max-width: 768px) {
+      .contenido {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .contenido img {
+        width: 100%;
+        max-width: 400px;
+      }
+
+      .descripcion {
+        text-align: left;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Soporte y mantenimiento</h1>
+  </header>
+
+  <div class="contenido">
+    <img src="https://0.academia-photos.com/attachment_thumbnails/34341549/mini_magick20190323-12294-16qrvzg.png?1553409943" alt="soporte" />
+    
+    <div class="descripcion">
+      <h2>Fundamentos del mantenimiento de equipos de cómputo</h2>
+      <p>
+        Este manual explica las mejores prácticas para el mantenimiento preventivo y correctivo de computadoras. Aborda limpieza, diagnóstico de fallas comunes, revisión de componentes y software básico.
+      </p>
+      <p>
+        Perfecto para técnicos en formación, estudiantes de informática y cualquier persona interesada en prolongar la vida útil de sus equipos.
+      </p>
+      <div class="botones">
+        <button class="agregar" id="btnAgregar">Agregar al carrito</button>
+        <a href="index.html" class="volver">← Volver a la biblioteca</a>
+        <a href="https://riverraid17.wordpress.com/wp-content/uploads/2010/01/computadora-mantenimiento.pdf" class="descargar" download target="_blank" rel="noopener noreferrer"> Descargar libro</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const btnAgregar = document.getElementById('btnAgregar');
+
+    const libro = {
+      id: 'Soporte y mantenimiento',
+      titulo: 'Soporte y mantenimiento del equipo de cómputo',
+      imagen: 'https://www.gestiopolis.com/wp-content/uploads/2022/01/mantenimiento-computadoras.jpg'
+    };
+
+    btnAgregar.addEventListener('click', () => {
+      let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+      const existe = carrito.some(item => item.id === libro.id);
+
+      if (!existe) {
+        carrito.push(libro);
+        localStorage.setItem('carrito', JSON.stringify(carrito));
+        btnAgregar.textContent = 'Agregado ✅';
+        btnAgregar.disabled = true;
+      }
+    });
+
+    window.ad

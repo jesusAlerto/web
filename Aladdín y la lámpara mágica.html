@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aladdín y la lámpara mágica</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f0f2f5;
+      color: #333;
+    }
+
+    header {
+      background-color: #007BFF;
+      padding: 20px;
+      text-align: center;
+      color: white;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2em;
+    }
+
+    .contenido {
+      max-width: 1100px;
+      margin: 40px auto;
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+      padding: 40px;
+      display: flex;
+      flex-direction: row;
+      gap: 30px;
+      align-items: flex-start;
+    }
+
+    .contenido img {
+      width: 350px;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      object-fit: cover;
+    }
+
+    .descripcion {
+      flex: 1;
+    }
+
+    .descripcion h2 {
+      color: #007BFF;
+      font-size: 1.8em;
+      margin-top: 0;
+    }
+
+    .descripcion ul {
+      margin-top: 10px;
+      padding-left: 20px;
+    }
+
+    .botones {
+      margin-top: 30px;
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .botones a,
+    .botones button {
+      padding: 10px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .volver {
+      background-color: #6c757d;
+      color: white;
+    }
+
+    .volver:hover {
+      background-color: #5a6268;
+    }
+
+    .agregar {
+      background-color: #28a745;
+      color: white;
+      border: none;
+    }
+
+    .agregar:hover {
+      background-color: #218838;
+    }
+
+    .descargar {
+      background-color: #007BFF;
+      color: white;
+      border: none;
+    }
+
+    .descargar:hover {
+      background-color: #0056b3;
+    }
+
+    footer {
+      margin-top: 60px;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
+      color: #777;
+    }
+
+    @media (max-width: 768px) {
+      .contenido {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .contenido img {
+        width: 100%;
+        max-width: 400px;
+      }
+
+      .descripcion {
+        text-align: left;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Cuentos</h1>
+  </header>
+
+  <div class="contenido">
+    <img src="https://dse097yy69ach.cloudfront.net/files/02cc0598db544fecaedba6c58a6e8579.webp" alt="Aladdín y la lámpara mágica" />
+    
+    <div class="descripcion">
+      <h2>Aladdín y la lámpara mágica</h2>
+      <p>
+Nunca pierdas la esperanza, ni siquiera en los momentos difíciles. Al final, el bien siempre ganará. Un cuento clásico mundialmente famoso sobre un niño ingenuo llamado Aladdín. Un malvado mago lo utiliza para conseguir una lámpara mágica. Cuando queda atrapado en la tumba, el poderoso genio que vive en la lámpara lo ayuda.<div class="botones">
+        <button class="agregar" id="btnAgregar">Agregar al carrito</button>
+        <a href="cuentos.html" class="volver">← Volver a la biblioteca</a>
+        <a href="https://dse097yy69ach.cloudfront.net/files/fd20218e6cf249e491aef16dee7f29b4.pdf" class="descargar" download target="_blank" rel="noopener noreferrer">📥 Descargar libro</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const btnAgregar = document.getElementById('btnAgregar');
+
+    const libro = {
+      id: 'Aladdín y la lámpara mágica',
+      titulo: 'Aladdín y la lámpara mágica',
+      imagen: 'https://dse097yy69ach.cloudfront.net/files/02cc0598db544fecaedba6c58a6e8579.webp'
+    };
+
+    btnAgregar.addEventListener('click', () => {
+      let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+      const existe = carrito.some(item => item.id === libro.id);
+
+      if (!existe) {
+        carrito.push(libro);
+        localStorage.setItem('carrito', JSON.stringify(carrito));
+        btnAgregar.textContent = 'Agregado ✅';
+        btnAgregar.disabled = true;
+      }
+    });
+
+    window.addEventListener('DOMContentLoaded', () => {
+      let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+      const existe = carrito.some(item => item.id === libro.id);
+
+      if (existe) {
+        btnAgregar.textContent = 'Agregado ✅';
+        btnAgregar.disabled = true;
+      }
+    });
+  </script>
+
+</body>
+</html>
