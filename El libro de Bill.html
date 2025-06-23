@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>El libro de Bill</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f0f2f5;
+      color: #333;
+    }
+
+    header {
+      background-color: #007BFF;
+      padding: 20px;
+      text-align: center;
+      color: white;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2em;
+    }
+
+    .contenido {
+      max-width: 1100px;
+      margin: 40px auto;
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+      padding: 40px;
+      display: flex;
+      flex-direction: row;
+      gap: 30px;
+      align-items: flex-start;
+    }
+
+    .contenido img {
+      width: 350px;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      object-fit: cover;
+    }
+
+    .descripcion {
+      flex: 1;
+    }
+
+    .descripcion h2 {
+      color: #007BFF;
+      font-size: 1.8em;
+      margin-top: 0;
+    }
+
+    .descripcion ul {
+      margin-top: 10px;
+      padding-left: 20px;
+    }
+
+    .botones {
+      margin-top: 30px;
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .botones a,
+    .botones button {
+      padding: 10px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .volver {
+      background-color: #6c757d;
+      color: white;
+    }
+
+    .volver:hover {
+      background-color: #5a6268;
+    }
+
+    .agregar {
+      background-color: #28a745;
+      color: white;
+      border: none;
+    }
+
+    .agregar:hover {
+      background-color: #218838;
+    }
+
+    .descargar {
+      background-color: #007BFF;
+      color: white;
+      border: none;
+    }
+
+    .descargar:hover {
+      background-color: #0056b3;
+    }
+
+    footer {
+      margin-top: 60px;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
+      color: #777;
+    }
+
+    @media (max-width: 768px) {
+      .contenido {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .contenido img {
+        width: 100%;
+        max-width: 400px;
+      }
+
+      .descripcion {
+        text-align: left;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Terror</h1>
+  </header>
+
+  <div class="contenido">
+    <img src="https://static0planetadelibroscommx.cdnstatics.com/usuaris/libros/fotos/399/m_libros/portada_el-libro-de-bill_alex-hirsch_202405272351.jpg" alt="El libro de Bill" />
+    
+    <div class="descripcion">
+      <h2>El libro de Bill</h2>
+      <p>
+El demonio que aterrorizó Gravity Falls está de vuelta desde el más allá para contar por fin su versión de la historia en El libro de Bill, escrito nada menos que por el mismísimo Bill Clave.      </p>
+
+      <p>
+En estas páginas, Bill comparte sus extraños orígenes, su siniestro efecto en la historia de la humanidad, los secretos más vergonzosos de la familia Pines y la receta para conquistar el mundo (con una práctica guía paso a paso). Este caótico y bello tomo ilustrado contiene confusos acertijos, claves indescifrables, páginas perdidas del Diario 3, maneras de engañar la muerte, el significado de la vida y un capítulo completo sobre popotes bobos con formas divertidas. Pero lo más importante es que El libro de Bill está muy, muy maldito.      </p>
+
+      <div class="botones">
+        <button class="agregar" id="btnAgregar">Agregar al carrito</button>
+        <a href="terror.html" class="volver">← Volver a la biblioteca</a>
+        <a href="https://archive.org/details/el-libro-de-bill-1/page/n23/mode/2up" class="descargar" download target="_blank" rel="noopener noreferrer">📥 Descargar libro</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const btnAgregar = document.getElementById('btnAgregar');
+
+    const libro = {
+      id: 'El libro de Bill',
+      titulo: 'El libro de Bill',
+      imagen: 'https://static0planetadelibroscommx.cdnstatics.com/usuaris/libros/fotos/399/m_libros/portada_el-libro-de-bill_alex-hirsch_202405272351.jpg'
+    };
+
+    btnAgregar.addEventListener('click', () => {
+      let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+      const existe = carrito.some(item => item.id === libro.id);
+
+      if (!existe) {
+        carrito.push(libro);
+        localStorage.setItem('carrito', JSON.stringify(carrito));
+        btnAgregar.textContent = 'Agregado ✅';
+        btnAgregar.disabled = true;
+      }
+    });
+
+    window.addEventListener('DOMContentLoaded', () => {
+      let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+      const existe = carrito.some(item => item.id === libro.id);
+
+      if (existe) {
+        btnAgregar.textContent = 'Agregado ✅';
+        btnAgregar.disabled = true;
+      }
+    });
+  </script>
+
+</body>
+</html>

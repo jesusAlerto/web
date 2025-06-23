@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>terror</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f6f8;
+      color: #333;
+    }
+
+    header {
+      background-color: #007BFF;
+      color: rgb(255, 255, 255);
+      padding: 20px 40px;
+      text-align: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2em;
+    }
+
+    .contenedor {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .libros-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 25px;
+    }
+
+    .libro {
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      padding: 15px;
+      text-align: center;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .libro:hover {
+      transform: scale(1.03);
+      box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+    }
+
+    .libro img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .libro p {
+      margin-top: 10px;
+      font-weight: bold;
+      color: #555;
+    }
+    .nav-links {
+  margin-top: 10px;
+}
+
+.nav-links a {
+  margin: 0 15px;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+
+    footer {
+      margin-top: 50px;
+      padding: 20px;
+      text-align: center;
+      background-color: #eaeaea;
+      font-size: 0.9em;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <!-- Barra de navegación -->
+  <header class="navbar">
+    <h1>Libros de terror</h1>
+    <p>Explora nuestros libros de terror</p>
+    <nav class="nav-links">
+      <a href="biblioteca.html">Inicio</a>
+      <a href="cuentos.html">cuentos</a>
+      <a href="romance.html">romance</a>
+      <a href="comedia.html">comedia</a>
+      <a href="programacion.html">programacion</a>
+      <a href="administracion.html">administracion</a>
+      <a href="soporte.html">soporte</a>
+
+    </nav>
+  </header>
+
+  <div class="contenedor">
+    <div class="libros-grid">
+
+        <a href="El libro de Bill.html" class="libro">
+            <img src="https://static0planetadelibroscommx.cdnstatics.com/usuaris/libros/fotos/399/m_libros/portada_el-libro-de-bill_alex-hirsch_202405272351.jpg" alt="El libro de Bill">
+            <p>El libro de Bill</p>
+          </a>
+          
+          <a href="Paperbacks from hell.html" class="libro">
+            <img src="https://static0planetadelibroscommx.cdnstatics.com/usuaris/libros/fotos/414/m_libros/413254_portada_paperbacks-from-hell_grady-hendrix_202408091145.jpg" alt="Paperbacks from hell">
+            <p>Paperbacks from hell</p>
+          </a>
+
+          <a href="La materia de las sombras.html " class="libro">
+            <img src="https://static0planetadelibroscommx.cdnstatics.com/usuaris/libros/fotos/405/m_libros/404688_portada_la-materia-de-las-sombras_antonio-runa_202402271304.jpg" alt="La materia de las sombras">
+            <p>La materia de las sombras</p>
+          </a>
+          
+        <a href="La chica gris.html" class="libro">
+            <img src="https://static0planetadelibroscommx.cdnstatics.com/usuaris/libros/fotos/378/m_libros/377603_portada_la-chica-gris_antonio-runa_202310231052.jpg" alt="La chica gris">
+            <p>La chica gris</p>
+          </a>
+
+             
+    </div>
+  </div>
+</body>
+</html>

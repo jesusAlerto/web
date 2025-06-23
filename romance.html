@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>romance</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f6f8;
+      color: #333;
+    }
+
+    header {
+      background-color: #007BFF;
+      color: rgb(255, 255, 255);
+      padding: 20px 40px;
+      text-align: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2em;
+    }
+
+    .contenedor {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .libros-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 25px;
+    }
+
+    .libro {
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      padding: 15px;
+      text-align: center;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .libro:hover {
+      transform: scale(1.03);
+      box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+    }
+
+    .libro img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .libro p {
+      margin-top: 10px;
+      font-weight: bold;
+      color: #555;
+    }
+    .nav-links {
+  margin-top: 10px;
+}
+
+.nav-links a {
+  margin: 0 15px;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+
+    footer {
+      margin-top: 50px;
+      padding: 20px;
+      text-align: center;
+      background-color: #eaeaea;
+      font-size: 0.9em;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <!-- Barra de navegación -->
+  <header class="navbar">
+    <h1>Romance</h1>
+    <p>Explora nuestros libros de romance</p>
+        <p>Las mas bonitas historias</p>
+    <nav class="nav-links">
+      <a href="bilioteca.html">Inicio</a>
+      <a href="terror.html">terror</a>
+      <a href="cuentos.html">cuentos</a>
+      <a href="carrito.html">carrito</a>
+      <a href="compra.html">compra</a>
+    </nav>
+  </header>
+
+  <div class="contenedor">
+    <div class="libros-grid">
+
+        <a href="Viaje a Andrómeda.html" class="libro">
+            <img src="https://static0planetadelibroscommx.cdnstatics.com/usuaris/libros/fotos/417/m_libros/portada_viaje-a-andromeda_francesc-miralles_202503131955.jpg" alt="Viaje a Andrómeda">
+            <p>Viaje a Andrómeda</p>
+          </a>
+          
+          <a href="La chica de Woodstock.html" class="libro">
+            <img src="https://static0planetadelibroscommx.cdnstatics.com/usuaris/libros/fotos/416/m_libros/portada_la-chica-de-woodstock_elena-castillo_202503121619.jpg" alt="La chica de Woodstock">
+            <p>La chica de Woodstock</p>
+          </a>
+
+          <a href="Respiro por ti.html " class="libro">
+            <img src="https://static0planetadelibroscommx.cdnstatics.com/usuaris/libros/fotos/416/m_libros/portada_respiro-por-ti-serie-hospital-whitestone-3_ava-reed_202502202257.jpg" alt="Respiro por ti ">
+            <p>Respiro por ti </p>
+          </a>
+          
+        <a href="Primer amor.html" class="libro">
+            <img src="https://static0planetadelibroscommx.cdnstatics.com/usuaris/libros/fotos/415/m_libros/portada_primer-amor-heart-bones_colleen-hoover_202501310043.jpg" alt="Primer amor">
+            <p>Primer amor</p>
+          </a>
+
+             
+    </div>
+  </div>
+</body>
+</html>

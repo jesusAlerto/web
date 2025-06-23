@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Encuesta de Satisfacción - Biblioteca Digital</title>
+    <style>
+        /* Reset básico para evitar márgenes/paddings no deseados */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #74ebd5 0%, #ACB6E5 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+            width: 100%;
+            max-width: 500px;
+            padding: 30px 35px;
+        }
+
+        h1, h2 {
+            text-align: center;
+            margin-bottom: 12px;
+            font-weight: 700;
+            color: #004c99;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+        }
+
+        h2 {
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-bottom: 25px;
+        }
+
+        p {
+            font-size: 0.9rem;
+            margin-bottom: 6px;
+            color: #555;
+        }
+
+        form label {
+            display: block;
+            font-weight: 600;
+            margin-top: 18px;
+            margin-bottom: 6px;
+            color: #004c99;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="number"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px 14px;
+            border-radius: 8px;
+            border: 1.5px solid #ccc;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+            font-family: inherit;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="number"]:focus,
+        select:focus,
+        textarea:focus {
+            border-color: #0066cc;
+            outline: none;
+            box-shadow: 0 0 6px rgba(0, 102, 204, 0.3);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        button {
+            margin-top: 25px;
+            width: 100%;
+            background-color: #0066cc;
+            color: #fff;
+            border: none;
+            padding: 14px 0;
+            font-size: 1.1rem;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 700;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #004c99;
+        }
+
+        /* Responsive para dispositivos móviles */
+        @media (max-width: 480px) {
+            .container {
+                padding: 25px 20px;
+                width: 95%;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            h2 {
+                font-size: 1rem;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Biblioteca Digital</h1>
+
+        <h2>Encuesta de Satisfacción de Usuarios</h2>
+        
+
+        <form action="procesar_encuesta.php" method="POST">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+
+            <label for="email">Correo Electrónico:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="edad">Edad:</label>
+            <input type="number" id="edad" name="edad" required min="1" max="120">
+
+            <label for="satisfaccion">Nivel general de satisfacción con la biblioteca digital:</label>
+            <select id="satisfaccion" name="satisfaccion" required>
+                <option value="">Seleccione</option>
+                <option value="Muy Satisfecho">Muy Satisfecho</option>
+                <option value="Satisfecho">Satisfecho</option>
+                <option value="Neutral">Neutral</option>
+                <option value="Insatisfecho">Insatisfecho</option>
+                <option value="Muy Insatisfecho">Muy Insatisfecho</option>
+            </select>
+
+            <label for="pregunta1">¿Te pareció fácil encontrar los libros o recursos que buscabas?</label>
+            <select id="pregunta1" name="pregunta1" required>
+                <option value="">Seleccione</option>
+                <option value="Muy fácil">Muy fácil</option>
+                <option value="Algo fácil">Algo fácil</option>
+                <option value="Neutral">Neutral</option>
+                <option value="Difícil">Difícil</option>
+                <option value="Muy difícil">Muy difícil</option>
+            </select>
+
+            <label for="pregunta2">¿Qué tan satisfecho estás con la experiencia de uso de la plataforma?</label>
+            <select id="pregunta2" name="pregunta2" required>
+                <option value="">Seleccione</option>
+                <option value="Muy satisfecho">Muy satisfecho</option>
+                <option value="Satisfecho">Satisfecho</option>
+                <option value="Neutral">Neutral</option>
+                <option value="Insatisfecho">Insatisfecho</option>
+                <option value="Muy insatisfecho">Muy insatisfecho</option>
+            </select>
+
+            <label for="pregunta3">¿Te sentiste seguro/a al utilizar la plataforma (protección de datos, privacidad)?</label>
+            <select id="pregunta3" name="pregunta3" required>
+                <option value="">Seleccione</option>
+                <option value="Sí, completamente seguro/a">Sí, completamente seguro/a</option>
+                <option value="Algo seguro/a">Algo seguro/a</option>
+                <option value="No seguro/a">No seguro/a</option>
+                <option value="No estoy seguro/a">No estoy seguro/a</option>
+            </select>
+
+            <label for="pregunta4">¿Fue simple y fácil de usar la plataforma?</label>
+            <select id="pregunta4" name="pregunta4" required>
+                <option value="">Seleccione</option>
+                <option value="Sí">Sí</option>
+                <option value="No">No</option>
+                <option value="En parte">En parte</option>
+            </select>
+
+            <label for="pregunta5">¿Recomendarías esta biblioteca digital a un amigo o compañero?</label>
+            <select id="pregunta5" name="pregunta5" required>
+                <option value="">Seleccione</option>
+                <option value="Definitivamente sí">Definitivamente sí</option>
+                <option value="Probablemente sí">Probablemente sí</option>
+                <option value="No estoy seguro/a">No estoy seguro/a</option>
+                <option value="Probablemente no">Probablemente no</option>
+                <option value="Definitivamente no">Definitivamente no</option>
+            </select>
+
+            <label for="pregunta6">¿Qué aspecto(s) mejorarías en la biblioteca digital?</label>
+            <select id="pregunta6" name="pregunta6" required>
+                <option value="">Seleccione</option>
+                <option value="Interfaz de usuario">Interfaz de usuario</option>
+                <option value="Velocidad de carga">Velocidad de carga</option>
+                 <option value="Variedad de recursos">Variedad de recursos</option>
+                <option value="Búsqueda y filtros">Búsqueda y filtros</option>
+                <option value="Soporte técnico">Soporte técnico</option>
+                <option value="Nada, todo está bien">Nada, todo está bien</option>
+            </select>
+
+            <label for="comentarios">Comentarios adicionales:</label>
+            <textarea id="comentarios" name="comentarios" rows="4" required></textarea>
+
+            <button type="submit">Enviar</button>
+        </form>
+        
+    </div>
+   
+</body>
+</html>
